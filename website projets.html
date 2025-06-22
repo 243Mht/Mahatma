@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>website projets – Mahatma Concept</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFD700',
+            background: '#0f0f0f'
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'sans-serif'],
+            title: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-white font-sans">
+
+<header class="bg-[#1a1a1a] sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <div class="text-2xl font-title font-bold">Mahatma Concept</div>
+    <button class="md:hidden text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-primary transition">Accueil</a>
+      <a href="index.html#projects" class="hover:text-primary transition">Projets</a>
+      <a href="index.html#about" class="hover:text-primary transition">À propos</a>
+      <a href="index.html#contact" class="hover:text-primary transition">Contacts</a>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="hover:text-primary transition">Accueil</a>
+      <a href="index.html#projects" class="hover:text-primary transition">Projets</a>
+      <a href="index.html#about" class="hover:text-primary transition">À propos</a>
+      <a href="index.html#contact" class="hover:text-primary transition">Contacts</a>
+    </nav>
+  </div>
+</header>
+
+<section class="px-8 py-16 max-w-6xl mx-auto">
+  <h1 class="text-4xl font-title mb-6 text-primary">website projets</h1>
+  <p class="text-gray-300 mb-8">Cliquez sur une image pour voir plus.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <img src="images/web/1.jpg" onclick="openModal(1)" class="rounded cursor-pointer hover:scale-105 transition duration-300" alt="Image 1">
+    <img src="images/web/11.jpg" onclick="openModal(2)" class="rounded cursor-pointer hover:scale-105 transition duration-300" alt="Image 2">
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden flex justify-center items-center z-50">
+  <div class="relative w-full max-w-3xl px-4 flex justify-center items-center">
+    <button onclick="closeModal()" class="absolute top-0 right-0 text-white text-4xl px-4">&times;</button>
+    <div class="swiper mySwiper w-full">
+      <div class="swiper-wrapper" id="swiper-content">
+        <!-- Slides injected here -->
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-[#1a1a1a] text-white px-8 py-8 text-center text-sm mt-10">
+  © 2025 Mahatma Concept. Tous droits réservés.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const slidesData = {
+    1: ['images/web/1.jpg','images/web/2.jpg','images/web/2.jpg','images/web/3.jpg','images/web/4.jpg','images/web/5.jpg','images/web/6.jpg'],
+    2: ['images/web/11.jpg','images/web/22.jpg','images/web/33.jpg','images/web/44.jpg','images/web/55.jpg']
+  };
+
+  let swiperInstance = null;
+
+  function openModal(index) {
+    const container = document.getElementById('swiper-content');
+    container.innerHTML = slidesData[index].map(src => `
+      <div class="swiper-slide flex justify-center">
+        <img src="${src}" class="max-h-[80vh] rounded shadow" />
+      </div>
+    `).join('');
+
+    document.getElementById('modal').classList.remove('hidden');
+
+    if (swiperInstance) swiperInstance.destroy();
+
+    swiperInstance = new Swiper('.mySwiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.add('hidden');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahatma Concept</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FFD700',
+            background: '#0f0f0f'
+          },
+          fontFamily: {
+            sans: ['Open Sans', 'sans-serif'],
+            title: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-white font-sans">
+
+  <header class="bg-[#1a1a1a] sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="text-2xl font-title font-bold">Mahatma Concept</div>
+      <button class="md:hidden text-white focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-primary transition">Accueil</a>
+        <a href="#projects" class="hover:text-primary transition">Projets</a>
+        <a href="#about" class="hover:text-primary transition">À propos</a>
+        <a href="#contact" class="hover:text-primary transition">Contacts</a>
+      </nav>
+    </div>
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+      <nav class="flex flex-col space-y-2">
+        <a href="#" class="hover:text-primary transition">Accueil</a>
+        <a href="#projects" class="hover:text-primary transition">Projets</a>
+        <a href="#about" class="hover:text-primary transition">À propos</a>
+        <a href="#contact" class="hover:text-primary transition">Contacts</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="flex flex-wrap md:flex-nowrap items-center justify-between px-8 py-20 bg-black gap-10">
+    <div class="max-w-xl" data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-title mb-4">Bienvenue chez Mahatma Concept</h1>
+      <p class="text-lg text-gray-300">Agence créative spécialisée en <br> Design Graphique • Développement Web et Mobile</p>
+      <div class="mt-6 flex flex-col sm:flex-row sm:justify-start items-center gap-4">
+        <button class="bg-primary text-black px-6 py-3 rounded-xl font-bold hover:scale-105 transition w-full sm:w-auto text-center">Nos projets</button>
+        <button class="border border-primary px-6 py-3 rounded-xl hover:bg-primary hover:text-black transition w-full sm:w-auto text-center">Télécharger la Brochure</button>
+      </div>
+    </div>
+    <div class="w-full md:w-[400px]" data-aos="fade-left">
+      <img src="images/mht pngv22.png" alt="Mon logo" class="transform transition duration-500 hover:scale-110 hover:brightness-75 rounded-xl">
+    </div>
+  </section>
+
+ <section id="projects" class="px-8 py-20">
+  <h2 class="text-3xl font-title mb-10 text-center">Works</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+    <!-- Projet 1 -->
+    <a href="projets graphique.html" class="group bg-[#1e1e1e] rounded-xl p-4 hover:scale-105 transition shadow-lg" data-aos="zoom-in">
+      <div class="relative overflow-hidden rounded mb-2">
+        <img src="images/designp2.jpg" alt="Projet 1" class="w-full h-auto transform transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+      </div>
+      <h3 class="text-xl font-semibold mb-1">Projets graphique</h3>
+      <p class="text-sm text-gray-400">Ici, notre palmarès graphique .</p>
+    </a>
+
+    <!-- Projet 2 -->
+    <a href="website projets.html" class="group bg-[#1e1e1e] rounded-xl p-4 hover:scale-105 transition shadow-lg" data-aos="zoom-in">
+      <div class="relative overflow-hidden rounded mb-2">
+        <img src="images/webp.jpg" alt="Projet 2" class="w-full h-auto transform transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+      </div>
+      <h3 class="text-xl font-semibold mb-1">Web projets</h3>
+      <p class="text-sm text-gray-400">Ici, nos projets web interactif ou landing pages.</p>
+    </a>
+
+    <!-- Projet 3 -->
+    <a href="Mobile Apps projets.html" class="group bg-[#1e1e1e] rounded-xl p-4 hover:scale-105 transition shadow-lg" data-aos="zoom-in">
+      <div class="relative overflow-hidden rounded mb-2">
+        <img src="images/mobilp.jpg" alt="Projet 3" class="w-full h-auto transform transition duration-500 group-hover:scale-110 group-hover:brightness-75">
+      </div>
+      <h3 class="text-xl font-semibold mb-1">Mobile Apps projets</h3>
+      <p class="text-sm text-gray-400">Mini app, script ou API custom.</p>
+    </a>
+
+  </div>
+</section>
+
+
+
+  <section id="about" class="px-8 py-20 bg-[#121212]">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+    <div class="md:w-1/2" data-aos="fade-right">
+      <img src="images/mht2.jpg" alt="Illustration à propos" class="rounded-xl w-full">
+    </div>
+    <div class="md:w-1/2 text-gray-300 text-left" data-aos="fade-left">
+      <h2 class="text-3xl font-title mb-6">À propos</h2>
+      <p>
+        Mahatma Concept est une agence créative spécialisée en design graphique, développement web et mobile. Nous accompagnons
+        les marques dans la création d’expériences visuelles percutantes et de solutions digitales sur mesure, alliant esthétisme, innovation et performance.
+        <br><br>
+        <strong>Compétences :</strong> Photoshop, Illustrator, Indesign, HTML, CSS, JS, React, Python, Git, APIs...
+      </p>
+      <div class="mt-6 space-x-4">
+        <a href="#" class="underline hover:text-primary">GitHub</a>
+        <a href="#" class="underline hover:text-primary">Behance</a>
+        <a href="#" class="underline hover:text-primary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact" class="px-8 py-20">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 items-start">
+    <div class="md:w-1/2" data-aos="fade-right">
+      <h2 class="text-3xl font-title mb-4">Contacts</h2>
+      <p class="text-gray-300 mb-4">
+        Pour toute demande de projet, partenariat ou question, n'hésitez pas à nous contacter via ce formulaire.
+      </p>
+      <ul class="text-gray-400 space-y-1">
+        <li><strong>Téléphone :</strong> +90 533 837 4753</li>
+        <li><strong>Email :</strong> ghandymuganda1@gmail.com</li>
+        <li><strong>Adresse :</strong> Girne/Karaoglanolu/Zombakli sokak7</li>
+      </ul>
+    </div>
+    <form class="md:w-1/2 space-y-4" data-aos="fade-left">
+      <input type="text" placeholder="Votre nom" class="w-full p-3 rounded bg-[#1a1a1a] border border-gray-700">
+      <input type="email" placeholder="Votre email" class="w-full p-3 rounded bg-[#1a1a1a] border border-gray-700">
+      <textarea rows="5" placeholder="Votre message" class="w-full p-3 rounded bg-[#1a1a1a] border border-gray-700"></textarea>
+      <button type="submit" class="bg-primary text-black px-6 py-3 rounded-xl font-bold hover:scale-105 transition">Envoyer</button>
+    </form>
+  </div>
+</section>
+
+
+  <footer class="bg-[#1a1a1a] text-white px-8 py-16 text-sm">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 border-t-4 border-orange-500 pt-8">
+      <div data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-2">Mahatma concept</h3>
+      </div>
+      <div class="hover:translate-y-[-2px] transition-transform" data-aos="fade-right">
+        <p>+90 533 837 4753</p>
+        <p>ghandymuganda1@gmail.com</p>
+        <p>Girne/Karaoglanolu/Zombakli sokak7/ Golden Yurdu ,Green block N•1</p>
+        <div class="flex gap-4 mt-2">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="FB" class="w-5 h-5"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter" class="w-5 h-5"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn" class="w-5 h-5"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733590.png" alt="GitHub" class="w-5 h-5"></a>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <ul class="space-y-1">
+          <li><a href="#" class="hover:text-primary">Politique de confidentialité</a></li>
+          <li><a href="#" class="hover:text-primary">Déclaration d’accessibilité</a></li>
+          <li><a href="#" class="hover:text-primary">Conditions générales</a></li>
+          <li><a href="#" class="hover:text-primary">Politique de remboursement</a></li>
+        </ul>
+      </div>
+      <div data-aos="fade-up">
+        <h4 class="font-semibold mb-2">Restons Connectés</h4>
+        <form class="space-y-2">
+          <input type="email" placeholder="Email *" class="w-full p-2 rounded border border-gray-700 bg-[#121212] text-white">
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="subscribe" class="accent-primary">
+            <label for="subscribe">Oui, abonnez-moi à la newsletter.</label>
+          </div>
+          <button type="submit" class="bg-primary text-black px-4 py-2 rounded hover:bg-yellow-400 transition">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center text-xs mt-10 text-gray-400">
+      © 2025 by Mahatma concept. Powered and secured by <a href="#" class="underline hover:text-primary">Mht concept</a>.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
